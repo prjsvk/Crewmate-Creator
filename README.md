@@ -12,6 +12,10 @@ A web application for creating, customizing, and managing your own crewmates! Bu
 - **Detail Pages**: Unique URLs for each crewmate with full information
 - **Navigation**: Easy navigation between create, list, and detail views
 
+### Video Link
+
+https://go.screenpal.com/watch/cTXlInnFKxI
+
 ### 🎨 Customization Options
 - **Colors**: Red, Blue, Green, Yellow, Purple, Orange
 - **Hat Styles**: Top Hat, Baseball Cap, Cowboy Hat, Party Hat, Crown, or No Hat
