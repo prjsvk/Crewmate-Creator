@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Crewmates - Crewmate Creator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">🚀 Crewmate Creator</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="create-crewmate.html" class="nav-link">Create Crewmate</a></li>
+                <li><a href="crewmates-list.html" class="nav-link">My Crewmates</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="detail-container">
+                <div class="detail-header">
+                    <h2>My Crewmates</h2>
+                    <a href="create-crewmate.html" class="btn btn-primary">+ New Crewmate</a>
+                </div>
+                
+                <div id="loadingMessage" class="loading">Loading your crewmates...</div>
+                <div id="errorMessage" class="error" style="display: none;"></div>
+                
+                <div id="emptyMessage" class="empty-state" style="display: none;">
+                    <h3>No crewmates yet!</h3>
+                    <p>Create your first crewmate to get started.</p>
+                    <a href="create-crewmate.html" class="btn btn-primary" style="margin-top: 1rem;">Create First Crewmate</a>
+                </div>
+                
+                <div id="crewmatesGrid" class="crewmates-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Crewmate Creator. All data stored locally in your browser.</p>
+    </footer>
+
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/crewmates-list.js"></script>
+</body>
+</html>

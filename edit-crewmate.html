@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Crewmate - Crewmate Creator</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">🚀 Crewmate Creator</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="create-crewmate.html" class="nav-link">Create Crewmate</a></li>
+                <li><a href="crewmates-list.html" class="nav-link">My Crewmates</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="loadingMessage" class="loading">Loading crewmate data...</div>
+            <div id="errorMessage" class="error" style="display: none;"></div>
+            <div id="formContainer" class="form-container" style="display: none;">
+                <h2>Edit Crewmate</h2>
+                <form id="editCrewmateForm">
+                    <div class="form-group">
+                        <label for="name">Crewmate Name *</label>
+                        <input type="text" id="name" name="name" required maxlength="50" placeholder="Enter crewmate name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Color *</label>
+                        <div class="attribute-options" id="colorOptions">
+                            <div class="attribute-option" data-value="red">🔴 Red</div>
+                            <div class="attribute-option" data-value="blue">🔵 Blue</div>
+                            <div class="attribute-option" data-value="green">🟢 Green</div>
+                            <div class="attribute-option" data-value="yellow">🟡 Yellow</div>
+                            <div class="attribute-option" data-value="purple">🟣 Purple</div>
+                            <div class="attribute-option" data-value="orange">🟠 Orange</div>
+                        </div>
+                        <input type="hidden" id="color" name="color" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hat Style *</label>
+                        <div class="attribute-options" id="hatOptions">
+                            <div class="attribute-option" data-value="none">🚫 No Hat</div>
+                            <div class="attribute-option" data-value="tophat">🎩 Top Hat</div>
+                            <div class="attribute-option" data-value="cap">🧢 Baseball Cap</div>
+                            <div class="attribute-option" data-value="cowboy">🤠 Cowboy Hat</div>
+                            <div class="attribute-option" data-value="party">🎉 Party Hat</div>
+                            <div class="attribute-option" data-value="crown">👑 Crown</div>
+                        </div>
+                        <input type="hidden" id="hat" name="hat" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Accessory *</label>
+                        <div class="attribute-options" id="accessoryOptions">
+                            <div class="attribute-option" data-value="none">🚫 None</div>
+                            <div class="attribute-option" data-value="glasses">👓 Glasses</div>
+                            <div class="attribute-option" data-value="flag">🚩 Flag</div>
+                            <div class="attribute-option" data-value="toolbox">🧰 Toolbox</div>
+                            <div class="attribute-option" data-value="medkit">💊 Medkit</div>
+                            <div class="attribute-option" data-value="key">🔑 Key</div>
+                        </div>
+                        <input type="hidden" id="accessory" name="accessory" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Skill Level *</label>
+                        <div class="attribute-options" id="skillOptions">
+                            <div class="attribute-option" data-value="novice">🟢 Novice</div>
+                            <div class="attribute-option" data-value="intermediate">🟡 Intermediate</div>
+                            <div class="attribute-option" data-value="advanced">🟠 Advanced</div>
+                            <div class="attribute-option" data-value="expert">🔴 Expert</div>
+                        </div>
+                        <input type="hidden" id="skill" name="skill" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personality">Personality *</label>
+                        <select id="personality" name="personality" required>
+                            <option value="">Select Personality</option>
+                            <option value="brave">💪 Brave</option>
+                            <option value="smart">🧠 Smart</option>
+                            <option value="funny">😂 Funny</option>
+                            <option value="kind">❤️ Kind</option>
+                            <option value="mysterious">🔮 Mysterious</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">Bio (Optional)</label>
+                        <textarea id="bio" name="bio" rows="4" maxlength="200" placeholder="Tell us about this crewmate..."></textarea>
+                    </div>
+
+                    <div class="form-actions" style="display: flex; gap: 1rem; justify-content: space-between;">
+                        <button type="button" class="btn btn-danger" id="deleteButton">Delete Crewmate</button>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="crewmates-list.html" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Update Crewmate</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Crewmate Creator. Built with Supabase.</p>
+    </footer>
+
+    <script src="scripts/supabase-client.js"></script>
+    <script src="scripts/edit-crewmate.js"></script>
+</body>
+</html>

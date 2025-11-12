@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crewmate Details - Crewmate Creator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">🚀 Crewmate Creator</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="create-crewmate.html" class="nav-link">Create Crewmate</a></li>
+                <li><a href="crewmates-list.html" class="nav-link">My Crewmates</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div id="loadingMessage" class="loading">Loading crewmate details...</div>
+            <div id="errorMessage" class="error" style="display: none;"></div>
+            <div id="detailContainer" class="detail-container" style="display: none;"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Crewmate Creator. All data stored locally in your browser.</p>
+    </footer>
+
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/crewmate-detail.js"></script>
+</body>
+</html>
